@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD01B241321705ED8F0C2C04 /* Pods_ThirdPartySample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F556F05AB532C8985E7B55 /* Pods_ThirdPartySample.framework */; };
 		FD8CA697234D05B900B28E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8CA696234D05B900B28E46 /* AppDelegate.swift */; };
 		FD8CA699234D05B900B28E46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8CA698234D05B900B28E46 /* ViewController.swift */; };
 		FD8CA69C234D05B900B28E46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8CA69A234D05B900B28E46 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		189AB8DC0DDCB546C63476FD /* Pods-ThirdPartySample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPartySample.release.xcconfig"; path = "Target Support Files/Pods-ThirdPartySample/Pods-ThirdPartySample.release.xcconfig"; sourceTree = "<group>"; };
+		A2F556F05AB532C8985E7B55 /* Pods_ThirdPartySample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThirdPartySample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D9E39D37E60C3EE1F4E452 /* Pods-ThirdPartySample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThirdPartySample.debug.xcconfig"; path = "Target Support Files/Pods-ThirdPartySample/Pods-ThirdPartySample.debug.xcconfig"; sourceTree = "<group>"; };
 		FD8CA693234D05B800B28E46 /* ThirdPartySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThirdPartySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8CA696234D05B900B28E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD8CA698234D05B900B28E46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD01B241321705ED8F0C2C04 /* Pods_ThirdPartySample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08837939FF8C544D93723819 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2F556F05AB532C8985E7B55 /* Pods_ThirdPartySample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		893419CA74D241663644E3A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5D9E39D37E60C3EE1F4E452 /* Pods-ThirdPartySample.debug.xcconfig */,
+				189AB8DC0DDCB546C63476FD /* Pods-ThirdPartySample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FD8CA68A234D05B800B28E46 = {
 			isa = PBXGroup;
 			children = (
 				FD8CA695234D05B800B28E46 /* ThirdPartySample */,
 				FD8CA694234D05B800B28E46 /* Products */,
+				893419CA74D241663644E3A9 /* Pods */,
+				08837939FF8C544D93723819 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD8CA6A5234D05BA00B28E46 /* Build configuration list for PBXNativeTarget "ThirdPartySample" */;
 			buildPhases = (
+				7AEEB898FC8FF84BB6803884 /* [CP] Check Pods Manifest.lock */,
 				FD8CA68F234D05B800B28E46 /* Sources */,
 				FD8CA690234D05B800B28E46 /* Frameworks */,
 				FD8CA691234D05B800B28E46 /* Resources */,
+				B2CC1D74A45059701C579A02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AEEB898FC8FF84BB6803884 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThirdPartySample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2CC1D74A45059701C579A02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThirdPartySample/Pods-ThirdPartySample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThirdPartySample/Pods-ThirdPartySample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThirdPartySample/Pods-ThirdPartySample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD8CA68F234D05B800B28E46 /* Sources */ = {
@@ -280,6 +348,7 @@
 		};
 		FD8CA6A6234D05BA00B28E46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D9E39D37E60C3EE1F4E452 /* Pods-ThirdPartySample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,6 +357,33 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Home.ThirdPartySample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,6 +394,7 @@
 		};
 		FD8CA6A7234D05BA00B28E46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 189AB8DC0DDCB546C63476FD /* Pods-ThirdPartySample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +403,33 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Home.ThirdPartySample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
